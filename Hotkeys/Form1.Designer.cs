@@ -39,6 +39,10 @@ namespace Hotkeys
             this.lblHotkeyHeading = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.dispDescription = new System.Windows.Forms.Label();
+            this.lblNewHeading = new System.Windows.Forms.Label();
+            this.btnRandom = new System.Windows.Forms.Button();
+            this.btnFromCategory = new System.Windows.Forms.Button();
+            this.btnFromKeys = new System.Windows.Forms.Button();
             this.tblLabels.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,11 +172,55 @@ namespace Hotkeys
             this.dispDescription.TabIndex = 8;
             this.dispDescription.Text = "descriptionHere";
             // 
+            // lblNewHeading
+            // 
+            this.lblNewHeading.AutoSize = true;
+            this.lblNewHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewHeading.Location = new System.Drawing.Point(12, 178);
+            this.lblNewHeading.Name = "lblNewHeading";
+            this.lblNewHeading.Size = new System.Drawing.Size(64, 25);
+            this.lblNewHeading.TabIndex = 9;
+            this.lblNewHeading.Text = "New:";
+            // 
+            // btnRandom
+            // 
+            this.btnRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnRandom.Location = new System.Drawing.Point(40, 207);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(75, 27);
+            this.btnRandom.TabIndex = 10;
+            this.btnRandom.Text = "Random";
+            this.btnRandom.UseVisualStyleBackColor = true;
+            // 
+            // btnFromCategory
+            // 
+            this.btnFromCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnFromCategory.Location = new System.Drawing.Point(121, 207);
+            this.btnFromCategory.Name = "btnFromCategory";
+            this.btnFromCategory.Size = new System.Drawing.Size(185, 27);
+            this.btnFromCategory.TabIndex = 11;
+            this.btnFromCategory.Text = "Search from categories";
+            this.btnFromCategory.UseVisualStyleBackColor = true;
+            // 
+            // btnFromKeys
+            // 
+            this.btnFromKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnFromKeys.Location = new System.Drawing.Point(312, 207);
+            this.btnFromKeys.Name = "btnFromKeys";
+            this.btnFromKeys.Size = new System.Drawing.Size(119, 27);
+            this.btnFromKeys.TabIndex = 12;
+            this.btnFromKeys.Text = "Search by keys";
+            this.btnFromKeys.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(684, 361);
+            this.Controls.Add(this.btnFromKeys);
+            this.Controls.Add(this.btnFromCategory);
+            this.Controls.Add(this.btnRandom);
+            this.Controls.Add(this.lblNewHeading);
             this.Controls.Add(this.dispDescription);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblHotkeyHeading);
@@ -198,6 +246,10 @@ namespace Hotkeys
         private System.Windows.Forms.Label lblHotkeyHeading;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label dispDescription;
+        private System.Windows.Forms.Label lblNewHeading;
+        private System.Windows.Forms.Button btnRandom;
+        private System.Windows.Forms.Button btnFromCategory;
+        private System.Windows.Forms.Button btnFromKeys;
     }
 }
 
