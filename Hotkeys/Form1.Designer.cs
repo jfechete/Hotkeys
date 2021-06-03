@@ -191,6 +191,7 @@ namespace Hotkeys
             this.btnRandom.TabIndex = 10;
             this.btnRandom.Text = "Random";
             this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // btnFromCategory
             // 
