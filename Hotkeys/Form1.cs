@@ -1,29 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hotkeys
 {
     public partial class Form1 : Form
     {
-
-
         public Form1()
         {
             InitializeComponent();
-            Console.Out.WriteLine();
+            RandomTip();
         }
 
-        private async void btnRandom_Click(object sender, EventArgs e)
+        private void ApplyHotkey(Hotkey showing)
         {
-            string item = await HotkeyHttpClient.GetRandomHotkey();
-            Console.WriteLine(item);
+            dispProgram.Text = showing.Program;
+            dispCategory.Text = showing.Category;
+            dispHotkey.Text = showing.Shortcut;
+            dispDescription.Text = showing.Action;
+        }
+
+        private async void RandomTip()
+        {
+            Hotkey random = await Hotkey.RandomHotkey();
+            ApplyHotkey(random);
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            RandomTip();
         }
     }
 }

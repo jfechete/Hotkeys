@@ -43,6 +43,7 @@ namespace Hotkeys
             this.btnRandom = new System.Windows.Forms.Button();
             this.btnFromCategory = new System.Windows.Forms.Button();
             this.btnFromKeys = new System.Windows.Forms.Button();
+            this.lblNotice = new System.Windows.Forms.Label();
             this.tblLabels.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,13 +163,15 @@ namespace Hotkeys
             // 
             // dispDescription
             // 
+            this.dispDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dispDescription.BackColor = System.Drawing.SystemColors.ControlLight;
             this.dispDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dispDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dispDescription.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dispDescription.Location = new System.Drawing.Point(40, 78);
             this.dispDescription.Name = "dispDescription";
-            this.dispDescription.Size = new System.Drawing.Size(632, 100);
+            this.dispDescription.Size = new System.Drawing.Size(682, 100);
             this.dispDescription.TabIndex = 8;
             this.dispDescription.Text = "descriptionHere";
             // 
@@ -213,11 +216,23 @@ namespace Hotkeys
             this.btnFromKeys.Text = "Search by keys";
             this.btnFromKeys.UseVisualStyleBackColor = true;
             // 
+            // lblNotice
+            // 
+            this.lblNotice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblNotice.AutoSize = true;
+            this.lblNotice.Location = new System.Drawing.Point(13, 271);
+            this.lblNotice.Name = "lblNotice";
+            this.lblNotice.Size = new System.Drawing.Size(708, 13);
+            this.lblNotice.TabIndex = 13;
+            this.lblNotice.Text = "Note: If this tool hasn\'t been used for a while, the server may have gone to slee" +
+    "p and could take a minute to wake up, resulting in delayed responses.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(684, 361);
+            this.ClientSize = new System.Drawing.Size(734, 296);
+            this.Controls.Add(this.lblNotice);
             this.Controls.Add(this.btnFromKeys);
             this.Controls.Add(this.btnFromCategory);
             this.Controls.Add(this.btnRandom);
@@ -251,6 +266,7 @@ namespace Hotkeys
         private System.Windows.Forms.Button btnRandom;
         private System.Windows.Forms.Button btnFromCategory;
         private System.Windows.Forms.Button btnFromKeys;
+        private System.Windows.Forms.Label lblNotice;
     }
 }
 
