@@ -29,5 +29,11 @@ namespace Hotkeys
         {
             RandomTip();
         }
+
+        private void btnFromCategory_Click(object sender, EventArgs e)
+        {
+            CategorySelect categoryChoose = new CategorySelect();
+            categoryChoose.Show();
+        }
     }
 }

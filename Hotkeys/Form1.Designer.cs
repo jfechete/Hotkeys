@@ -171,7 +171,7 @@ namespace Hotkeys
             this.dispDescription.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dispDescription.Location = new System.Drawing.Point(40, 78);
             this.dispDescription.Name = "dispDescription";
-            this.dispDescription.Size = new System.Drawing.Size(682, 100);
+            this.dispDescription.Size = new System.Drawing.Size(682, 60);
             this.dispDescription.TabIndex = 8;
             this.dispDescription.Text = "descriptionHere";
             // 
@@ -179,7 +179,7 @@ namespace Hotkeys
             // 
             this.lblNewHeading.AutoSize = true;
             this.lblNewHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewHeading.Location = new System.Drawing.Point(12, 178);
+            this.lblNewHeading.Location = new System.Drawing.Point(12, 138);
             this.lblNewHeading.Name = "lblNewHeading";
             this.lblNewHeading.Size = new System.Drawing.Size(64, 25);
             this.lblNewHeading.TabIndex = 9;
@@ -188,7 +188,7 @@ namespace Hotkeys
             // btnRandom
             // 
             this.btnRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnRandom.Location = new System.Drawing.Point(40, 207);
+            this.btnRandom.Location = new System.Drawing.Point(40, 165);
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(75, 27);
             this.btnRandom.TabIndex = 10;
@@ -199,17 +199,18 @@ namespace Hotkeys
             // btnFromCategory
             // 
             this.btnFromCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnFromCategory.Location = new System.Drawing.Point(121, 207);
+            this.btnFromCategory.Location = new System.Drawing.Point(121, 165);
             this.btnFromCategory.Name = "btnFromCategory";
             this.btnFromCategory.Size = new System.Drawing.Size(185, 27);
             this.btnFromCategory.TabIndex = 11;
             this.btnFromCategory.Text = "Search from categories";
             this.btnFromCategory.UseVisualStyleBackColor = true;
+            this.btnFromCategory.Click += new System.EventHandler(this.btnFromCategory_Click);
             // 
             // btnFromKeys
             // 
             this.btnFromKeys.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnFromKeys.Location = new System.Drawing.Point(312, 207);
+            this.btnFromKeys.Location = new System.Drawing.Point(312, 165);
             this.btnFromKeys.Name = "btnFromKeys";
             this.btnFromKeys.Size = new System.Drawing.Size(119, 27);
             this.btnFromKeys.TabIndex = 12;
@@ -220,7 +221,7 @@ namespace Hotkeys
             // 
             this.lblNotice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNotice.AutoSize = true;
-            this.lblNotice.Location = new System.Drawing.Point(13, 271);
+            this.lblNotice.Location = new System.Drawing.Point(13, 211);
             this.lblNotice.Name = "lblNotice";
             this.lblNotice.Size = new System.Drawing.Size(708, 13);
             this.lblNotice.TabIndex = 13;
@@ -231,7 +232,7 @@ namespace Hotkeys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(734, 296);
+            this.ClientSize = new System.Drawing.Size(734, 236);
             this.Controls.Add(this.lblNotice);
             this.Controls.Add(this.btnFromKeys);
             this.Controls.Add(this.btnFromCategory);
