@@ -35,6 +35,8 @@ namespace Hotkeys
             this.lblProgram = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.slctProgram = new System.Windows.Forms.ComboBox();
+            this.lblTipsHeading = new System.Windows.Forms.Label();
+            this.listHotkeys = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@ namespace Hotkeys
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(754, 24);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(452, 24);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // slctCategory
@@ -76,6 +78,7 @@ namespace Hotkeys
             this.slctCategory.Name = "slctCategory";
             this.slctCategory.Size = new System.Drawing.Size(14, 21);
             this.slctCategory.TabIndex = 5;
+            this.slctCategory.SelectedIndexChanged += new System.EventHandler(this.slctCategory_SelectedIndexChanged);
             // 
             // lblProgram
             // 
@@ -105,12 +108,37 @@ namespace Hotkeys
             this.slctProgram.Name = "slctProgram";
             this.slctProgram.Size = new System.Drawing.Size(74, 21);
             this.slctProgram.TabIndex = 4;
+            this.slctProgram.SelectedIndexChanged += new System.EventHandler(this.slctProgram_SelectedIndexChanged);
+            // 
+            // lblTipsHeading
+            // 
+            this.lblTipsHeading.AutoSize = true;
+            this.lblTipsHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipsHeading.Location = new System.Drawing.Point(12, 65);
+            this.lblTipsHeading.Name = "lblTipsHeading";
+            this.lblTipsHeading.Size = new System.Drawing.Size(64, 25);
+            this.lblTipsHeading.TabIndex = 8;
+            this.lblTipsHeading.Text = "Tips:";
+            // 
+            // listHotkeys
+            // 
+            this.listHotkeys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listHotkeys.FormattingEnabled = true;
+            this.listHotkeys.Location = new System.Drawing.Point(34, 93);
+            this.listHotkeys.Name = "listHotkeys";
+            this.listHotkeys.Size = new System.Drawing.Size(452, 199);
+            this.listHotkeys.TabIndex = 9;
+            this.listHotkeys.SelectedIndexChanged += new System.EventHandler(this.listTips_SelectedIndexChanged);
             // 
             // CategorySelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(498, 311);
+            this.Controls.Add(this.listHotkeys);
+            this.Controls.Add(this.lblTipsHeading);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblSelectHeading);
             this.Name = "CategorySelect";
@@ -130,5 +158,7 @@ namespace Hotkeys
         private System.Windows.Forms.ComboBox slctCategory;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.ComboBox slctProgram;
+        private System.Windows.Forms.Label lblTipsHeading;
+        private System.Windows.Forms.ListBox listHotkeys;
     }
 }

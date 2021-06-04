@@ -15,7 +15,9 @@ namespace Hotkeys
         const string PORT_CONFIG_KEY = "port";
 
         const string RANDOM_HOTKEY_POINT = "";
+        const string HOTKEY_CATEGORY_POINT = "/hotkeys?program={0}&category={1}";
         const string ALL_PROGRAMS_POINT = "/programs";
+        const string ALL_CATEGORIES_POINT = "/categories?program={0}";
 
         const string DEFAULT_URL = "http://localhost/";
         const int DEFAULT_PORT = 8080;
@@ -61,6 +63,21 @@ namespace Hotkeys
                 return "";
             }
         }
+        public static async Task<string> GetCategoryHotkeys(string program, string category)
+        {
+            HttpResponseMessage response = await client.GetAsync(string.Format(HOTKEY_CATEGORY_POINT,program,category));
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                return data;
+            }
+            else
+            {
+                Console.Out.WriteLine(response.Headers);
+                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
+        }
 
         public static async Task<string[]> GetPrograms()
         {
@@ -82,6 +99,28 @@ namespace Hotkeys
                 return null;
             }
         }
+
+        public static async Task<string[]> GetCategories(string program)
+        {
+            HttpResponseMessage response = await client.GetAsync(string.Format(ALL_CATEGORIES_POINT,program));
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                dynamic json = JsonConvert.DeserializeObject(data);
+                string[] returnValue = new string[json.Count];
+                for (int i = 0; i < returnValue.Length; i++)
+                {
+                    returnValue[i] = json[i].ToString();
+                }
+                return returnValue;
+            }
+            else
+            {
+                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
 
         //helper methods
         static string ChangePort(string requestUrl, int port)

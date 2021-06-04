@@ -8,10 +8,10 @@ namespace Hotkeys
         public Form1()
         {
             InitializeComponent();
-            RandomTip();
+            RandomHotkey();
         }
 
-        private void ApplyHotkey(Hotkey showing)
+        internal void ApplyHotkey(Hotkey showing)
         {
             dispProgram.Text = showing.Program;
             dispCategory.Text = showing.Category;
@@ -19,7 +19,7 @@ namespace Hotkeys
             dispDescription.Text = showing.Action;
         }
 
-        private async void RandomTip()
+        private async void RandomHotkey()
         {
             Hotkey random = await Hotkey.RandomHotkey();
             ApplyHotkey(random);
@@ -27,12 +27,13 @@ namespace Hotkeys
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            RandomTip();
+            RandomHotkey();
         }
 
         private void btnFromCategory_Click(object sender, EventArgs e)
         {
             CategorySelect categoryChoose = new CategorySelect();
+            categoryChoose.HotkeyDisplay = this;
             categoryChoose.Show();
         }
     }
