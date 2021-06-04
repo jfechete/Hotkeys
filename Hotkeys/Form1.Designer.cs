@@ -216,6 +216,7 @@ namespace Hotkeys
             this.btnFromKeys.TabIndex = 12;
             this.btnFromKeys.Text = "Search by keys";
             this.btnFromKeys.UseVisualStyleBackColor = true;
+            this.btnFromKeys.Click += new System.EventHandler(this.btnFromKeys_Click);
             // 
             // lblNotice
             // 

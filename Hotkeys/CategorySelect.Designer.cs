@@ -35,7 +35,7 @@ namespace Hotkeys
             this.lblProgram = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.slctProgram = new System.Windows.Forms.ComboBox();
-            this.lblTipsHeading = new System.Windows.Forms.Label();
+            this.lblHotkeysHeading = new System.Windows.Forms.Label();
             this.listHotkeys = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -110,15 +110,15 @@ namespace Hotkeys
             this.slctProgram.TabIndex = 4;
             this.slctProgram.SelectedIndexChanged += new System.EventHandler(this.slctProgram_SelectedIndexChanged);
             // 
-            // lblTipsHeading
+            // lblHotkeysHeading
             // 
-            this.lblTipsHeading.AutoSize = true;
-            this.lblTipsHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipsHeading.Location = new System.Drawing.Point(12, 65);
-            this.lblTipsHeading.Name = "lblTipsHeading";
-            this.lblTipsHeading.Size = new System.Drawing.Size(64, 25);
-            this.lblTipsHeading.TabIndex = 8;
-            this.lblTipsHeading.Text = "Tips:";
+            this.lblHotkeysHeading.AutoSize = true;
+            this.lblHotkeysHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHotkeysHeading.Location = new System.Drawing.Point(12, 65);
+            this.lblHotkeysHeading.Name = "lblHotkeysHeading";
+            this.lblHotkeysHeading.Size = new System.Drawing.Size(104, 25);
+            this.lblHotkeysHeading.TabIndex = 8;
+            this.lblHotkeysHeading.Text = "Hotkeys:";
             // 
             // listHotkeys
             // 
@@ -138,7 +138,7 @@ namespace Hotkeys
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 311);
             this.Controls.Add(this.listHotkeys);
-            this.Controls.Add(this.lblTipsHeading);
+            this.Controls.Add(this.lblHotkeysHeading);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblSelectHeading);
             this.Name = "CategorySelect";
@@ -158,7 +158,7 @@ namespace Hotkeys
         private System.Windows.Forms.ComboBox slctCategory;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.ComboBox slctProgram;
-        private System.Windows.Forms.Label lblTipsHeading;
+        private System.Windows.Forms.Label lblHotkeysHeading;
         private System.Windows.Forms.ListBox listHotkeys;
     }
 }
