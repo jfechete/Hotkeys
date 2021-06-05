@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace Hotkeys
@@ -34,8 +36,20 @@ namespace Hotkeys
         //helper methods
         private async void RandomHotkey()
         {
-            Hotkey random = await Hotkey.RandomHotkey();
-            ApplyHotkey(random);
+            try
+            {
+                Hotkey random = await Hotkey.RandomHotkey();
+                ApplyHotkey(random);
+            }
+            catch (HttpRequestException)
+            {
+                MessageBox.Show("Failed to connect to server", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
+            catch (WebException err)
+            {
+                MessageBox.Show(err.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         internal void ApplyHotkey(Hotkey showing)

@@ -29,6 +29,7 @@ namespace Hotkeys
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblProgram = new System.Windows.Forms.Label();
             this.dispProgram = new System.Windows.Forms.Label();
             this.dispCategory = new System.Windows.Forms.Label();
@@ -243,6 +244,7 @@ namespace Hotkeys
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblHotkeyHeading);
             this.Controls.Add(this.tblLabels);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Hotkeys";
             this.tblLabels.ResumeLayout(false);

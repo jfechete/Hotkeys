@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Configuration;
 using Newtonsoft.Json;
 
@@ -59,9 +59,7 @@ namespace Hotkeys
             }
             else
             {
-                Console.Out.WriteLine(response.Headers);
-                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "";
+                throw new WebException(response.ReasonPhrase);
             }
         }
 
@@ -75,9 +73,7 @@ namespace Hotkeys
             }
             else
             {
-                Console.Out.WriteLine(response.Headers);
-                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "";
+                throw new WebException(response.ReasonPhrase);
             }
         }
 
@@ -91,9 +87,7 @@ namespace Hotkeys
             }
             else
             {
-                Console.Out.WriteLine(response.Headers);
-                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "";
+                throw new WebException(response.ReasonPhrase);
             }
         }
 
@@ -113,8 +107,7 @@ namespace Hotkeys
             }
             else
             {
-                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                throw new WebException(response.ReasonPhrase);
             }
         }
 
@@ -134,8 +127,7 @@ namespace Hotkeys
             }
             else
             {
-                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                throw new WebException(response.ReasonPhrase);
             }
         }
 

@@ -29,6 +29,7 @@ namespace Hotkeys
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySearch));
             this.lblKeysHeading = new System.Windows.Forms.Label();
             this.lblKeys = new System.Windows.Forms.Label();
             this.dispKeys = new System.Windows.Forms.Label();
@@ -118,6 +119,7 @@ namespace Hotkeys
             this.Controls.Add(this.dispKeys);
             this.Controls.Add(this.lblKeys);
             this.Controls.Add(this.lblKeysHeading);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "HotkeySearch";
             this.Text = "HotkeySearch";

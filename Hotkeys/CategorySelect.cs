@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Hotkeys
@@ -34,17 +35,43 @@ namespace Hotkeys
         //main methods
         async void RefreshPrograms()
         {
-            UpdateComboBox(slctProgram, await HotkeyHttpClient.GetPrograms(),true);
+            try
+            {
+                UpdateComboBox(slctProgram, await HotkeyHttpClient.GetPrograms(), true);
+            } 
+            catch (WebException e)
+            {
+                MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
+
         }
 
         async void RefreshCategories()
         {
-            UpdateComboBox(slctCategory, await HotkeyHttpClient.GetCategories(slctProgram.SelectedItem.ToString()),true);
+            try
+            {
+
+                UpdateComboBox(slctCategory, await HotkeyHttpClient.GetCategories(slctProgram.SelectedItem.ToString()), true);
+            }
+            catch (WebException e)
+            {
+                MessageBox.Show(e.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
         }
 
         async void RefreshHotkeys()
         {
-            UpdateListBox(listHotkeys, await Hotkey.AllCategoryHotkeys(slctProgram.SelectedItem.ToString(), slctCategory.SelectedItem.ToString()),false);
+            try
+            {
+                UpdateListBox(listHotkeys, await Hotkey.AllCategoryHotkeys(slctProgram.SelectedItem.ToString(), slctCategory.SelectedItem.ToString()), false);
+            }
+            catch (WebException err)
+            {
+                MessageBox.Show(err.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
         }
 
         void DisplayHotkey()

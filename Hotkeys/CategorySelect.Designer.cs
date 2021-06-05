@@ -29,6 +29,7 @@ namespace Hotkeys
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategorySelect));
             this.lblSelectHeading = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.slctCategory = new System.Windows.Forms.ComboBox();
@@ -141,6 +142,7 @@ namespace Hotkeys
             this.Controls.Add(this.lblHotkeysHeading);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblSelectHeading);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CategorySelect";
             this.Text = "Category Select";
             this.tableLayoutPanel1.ResumeLayout(false);
