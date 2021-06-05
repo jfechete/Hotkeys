@@ -79,8 +79,10 @@ namespace Hotkeys
             this.btnResetKeys.Name = "btnResetKeys";
             this.btnResetKeys.Size = new System.Drawing.Size(75, 27);
             this.btnResetKeys.TabIndex = 11;
+            this.btnResetKeys.TabStop = false;
             this.btnResetKeys.Text = "Reset";
             this.btnResetKeys.UseVisualStyleBackColor = true;
+            this.btnResetKeys.Click += new System.EventHandler(this.btnResetKeys_Click);
             // 
             // lblHotkeysHeading
             // 
@@ -102,6 +104,7 @@ namespace Hotkeys
             this.listHotkeys.Name = "listHotkeys";
             this.listHotkeys.Size = new System.Drawing.Size(454, 173);
             this.listHotkeys.TabIndex = 13;
+            this.listHotkeys.TabStop = false;
             // 
             // HotkeySearch
             // 
@@ -117,6 +120,7 @@ namespace Hotkeys
             this.KeyPreview = true;
             this.Name = "HotkeySearch";
             this.Text = "HotkeySearch";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HotkeySearch_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
