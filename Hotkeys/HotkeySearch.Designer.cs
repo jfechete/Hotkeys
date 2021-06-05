@@ -105,6 +105,7 @@ namespace Hotkeys
             this.listHotkeys.Size = new System.Drawing.Size(454, 173);
             this.listHotkeys.TabIndex = 13;
             this.listHotkeys.TabStop = false;
+            this.listHotkeys.SelectedIndexChanged += new System.EventHandler(this.listHotkeys_SelectedIndexChanged);
             // 
             // HotkeySearch
             // 

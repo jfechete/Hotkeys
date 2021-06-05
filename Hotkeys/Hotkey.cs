@@ -38,6 +38,17 @@ namespace Hotkeys
             return returnValue;
         }
 
+        public static async Task<Hotkey[]> SearchHotkeys(string keys)
+        {
+            dynamic json = JsonConvert.DeserializeObject(await HotkeyHttpClient.GetSearchHotkeys(keys));
+            Hotkey[] returnValue = new Hotkey[json.Count];
+            for (int i = 0; i < returnValue.Length; i++)
+            {
+                returnValue[i] = JsonToHotkey(json[i]);
+            }
+            return returnValue;
+        }
+
         //instance methods
         public override string ToString()
         {

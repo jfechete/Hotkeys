@@ -16,6 +16,7 @@ namespace Hotkeys
 
         const string RANDOM_HOTKEY_POINT = "";
         const string HOTKEY_CATEGORY_POINT = "/hotkeys?program={0}&category={1}";
+        const string HOTKEY_SEARCH_POINT = "/by-keys?keys={0}";
         const string ALL_PROGRAMS_POINT = "/programs";
         const string ALL_CATEGORIES_POINT = "/categories?program={0}";
 
@@ -63,9 +64,26 @@ namespace Hotkeys
                 return "";
             }
         }
+
         public static async Task<string> GetCategoryHotkeys(string program, string category)
         {
-            HttpResponseMessage response = await client.GetAsync(string.Format(HOTKEY_CATEGORY_POINT,program,category));
+            HttpResponseMessage response = await client.GetAsync(string.Format(HOTKEY_CATEGORY_POINT, program, category));
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                return data;
+            }
+            else
+            {
+                Console.Out.WriteLine(response.Headers);
+                MessageBox.Show(response.ReasonPhrase, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
+        }
+
+        public static async Task<string> GetSearchHotkeys(string keys)
+        {
+            HttpResponseMessage response = await client.GetAsync(string.Format(HOTKEY_SEARCH_POINT, keys));
             if (response.IsSuccessStatusCode)
             {
                 string data = await response.Content.ReadAsStringAsync();

@@ -50,7 +50,7 @@ namespace Hotkeys
         void DisplayHotkey()
         {
             HotkeyDisplay.ApplyHotkey((Hotkey)listHotkeys.SelectedItem);
-            this.Close();
+            Close();
         }
 
         //helper methods

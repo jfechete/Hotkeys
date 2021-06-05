@@ -37,8 +37,10 @@ namespace Hotkeys
         };
 
         const string KEY_SEPARATOR = ",";
+        const int DROPDOWN_EXTRA_SPACE = 20;
 
         public Form1 HotkeyDisplay { private get; set; }
+        Guid _searchSession;
 
         //events and main methods
         public HotkeySearch()
@@ -59,6 +61,10 @@ namespace Hotkeys
                 }
                 dispKeys.Text += keyMap[e.KeyCode];
             }
+
+            //do this in case they press A,B, and the api returns in order B,A
+            _searchSession = Guid.NewGuid();
+            UpdateKeys(_searchSession);
         }
 
         private void btnResetKeys_Click(object sender, EventArgs e)
@@ -66,7 +72,47 @@ namespace Hotkeys
             dispKeys.Text = string.Empty;
         }
 
+        private void listHotkeys_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HotkeyDisplay.ApplyHotkey((Hotkey)listHotkeys.SelectedItem);
+            Close();
+        }
+
         //helper methods
-        
+        async void UpdateKeys(Guid mySession)
+        {
+            Hotkey[] hotkeys = await Hotkey.SearchHotkeys(dispKeys.Text);
+            if (_searchSession == mySession)
+            {
+                UpdateListBox(listHotkeys, hotkeys, false);
+            }
+        }
+
+        void UpdateListBox(ListBox box, object[] values, bool resize)
+        {
+            //remove old values
+            box.Items.Clear();
+
+            //add all values
+            foreach (object value in values)
+            {
+                box.Items.Add(value);
+            }
+
+            //resize box
+            if (resize)
+            {
+                int maxWidth = 0, temp = 0;
+                foreach (object obj in box.Items)
+                {
+                    temp = TextRenderer.MeasureText(obj.ToString(), box.Font).Width;
+                    if (temp > maxWidth)
+                    {
+                        maxWidth = temp;
+                    }
+                }
+                box.Width = maxWidth + DROPDOWN_EXTRA_SPACE;
+            }
+        }
     }
 }
