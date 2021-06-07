@@ -223,7 +223,7 @@ namespace Hotkeys
             // 
             this.lblNotice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNotice.AutoSize = true;
-            this.lblNotice.Location = new System.Drawing.Point(13, 211);
+            this.lblNotice.Location = new System.Drawing.Point(12, 202);
             this.lblNotice.Name = "lblNotice";
             this.lblNotice.Size = new System.Drawing.Size(708, 13);
             this.lblNotice.TabIndex = 13;
@@ -234,7 +234,7 @@ namespace Hotkeys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(734, 236);
+            this.ClientSize = new System.Drawing.Size(734, 224);
             this.Controls.Add(this.lblNotice);
             this.Controls.Add(this.btnFromKeys);
             this.Controls.Add(this.btnFromCategory);

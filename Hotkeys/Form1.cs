@@ -2,16 +2,21 @@
 using System.Net;
 using System.Net.Http;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Hotkeys
 {
+
     public partial class Form1 : Form
     {
+        static bool DEFAULT_SHOW_WARNING = false;
+        static string SHOW_WARNING_CONFIG_KEY = "warning";
         //main methods/events
         public Form1()
         {
             InitializeComponent();
             RandomHotkey();
+            HideWarning();
         }
 
         private void btnRandom_Click(object sender, EventArgs e)
@@ -58,6 +63,20 @@ namespace Hotkeys
             dispCategory.Text = showing.Category;
             dispHotkey.Text = showing.Shortcut;
             dispDescription.Text = showing.Action;
+        }
+
+        void HideWarning()
+        {
+            string showWarning = ConfigurationManager.AppSettings[SHOW_WARNING_CONFIG_KEY];
+            if (showWarning == null)
+            {
+                showWarning = DEFAULT_SHOW_WARNING.ToString();
+            }
+            if (!bool.Parse(showWarning))
+            {
+                Size = new System.Drawing.Size(Size.Width, Size.Height-ClientSize.Height + lblNotice.Top);
+                lblNotice.Visible = false;
+            }
         }
     }
 }
